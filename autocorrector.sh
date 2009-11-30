@@ -8,9 +8,14 @@ echo
 
 $(javac *.java)
 
+let errores=0;
+let correctas=0;
+let total=0;
 pruebas=$(ls pruebas/pruebas*.ent);
 for i in $pruebas
 {
+	let total=$total+1;
+	
 	# El fichero ejecutable es $i.
 	# El fichero con la salida del ejecutable es $i, quitandole el .ent y añadiendole .sal.
 	salida="";
@@ -24,14 +29,22 @@ for i in $pruebas
 	
 	$(java Main $i 2>>salida 1>>salida);
 	diff salida $salida -b;
-
+	
 	if ([ $? == 0 ]) then
-		echo "[OK]";
+		let correctas=$correctas+1;
+		echo -e "\e[0;32m[OK]\e[0m";
 	else
-		echo "[ERROR]";
+		let errores=$errores+1;
+		echo -e "\e[0;31m[ERROR]\e[0m";
 	fi
 	echo;
 }
+
+if ([ $errores -gt 0 ]) then
+	echo -e "Errores: \e[0;31m$errores\e[0m de $total pruebas";
+else
+	echo -e "Errores: \e[0;32m$errores\e[0m de $total pruebas";
+fi
 
 $(rm -f salida);
 $(rm -f aux);
