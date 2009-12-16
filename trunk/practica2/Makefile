@@ -4,7 +4,7 @@
 CLASSPATH = $$(echo $$ANTLR_CLASSPATH)
 
 # Hay que modificar este valor según el nombre de tu fichero ".g". En este caso sería, Embellecedor.g.
-GRAMATICA = Embellecedor
+GRAMATICA = plp2
 
 all: main
 
