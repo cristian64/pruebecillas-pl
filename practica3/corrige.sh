@@ -79,15 +79,16 @@ fi
 
 # Ficheros a corregir:
 
+mostrardiff="no"
 if test ! -z $1
 then  
   archivosentrada=$1.fnt
+  mostrardiff="si"
 else
   archivosentrada=$(ls *.fnt) 
 fi
 
 # Ficheros a corregir:
-
 for i in $archivosentrada 
 do
   n=$(basename $i .fnt)  
@@ -106,10 +107,18 @@ do
    rm -f $n.sal.tmp
    touch $n.sal.tmp
   fi
-                                                                      
+
+  if test $mostrardiff = "si"
+  then
+    diff -B $n.sal $n.sal.tmp
+  fi
   diff -B --brief $n.sal $n.sal.tmp >/dev/null
   if test $? -eq 0 
   then
+    if test $mostrardiff = "si"
+    then
+      diff -B $n.err $n.err.tmp
+    fi
     diff -B --brief $n.err $n.err.tmp >/dev/null
     if test $? -eq 0
     then
