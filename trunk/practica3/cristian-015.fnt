@@ -32,7 +32,10 @@ class Single
 			if (True | False)
 			{
 				bool a[], b, c, d, e, f, g, h, i;
-				
+				b = False;
+				c = False;
+				d = False;
+				e = True;
 				bool z;
 				z = b | c | d | e | True;
 
