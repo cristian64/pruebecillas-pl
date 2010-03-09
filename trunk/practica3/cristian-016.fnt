@@ -5,6 +5,7 @@ class Single
 		bool b;
 		int a;
 		a = 5;
+		b = True;
 		
 		/*
 		 b no se ha inicialziado y puede valer 981238123 y si está mal hecho el RELOP va a cascar porque va a comprar 5 con 898123123
