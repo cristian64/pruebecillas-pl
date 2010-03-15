@@ -20,6 +20,7 @@ public static void Main()
 
   int m2;
   bool alto;
+  alto=True;
   m2 = m/2;
   for(int i=3;i<=m2;i++)
   { 
