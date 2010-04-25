@@ -18,7 +18,7 @@ java=java
 javac=javac
 
 # Nombre del fichero con la especificación de ANTLR:
-nom=plp3
+nom=plp4
 
 ensamb=ilasm2
 maqvirt=mono
