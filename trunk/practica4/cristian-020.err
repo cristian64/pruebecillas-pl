@@ -1,1 +1,1 @@
-line 6:19 mismatched input '[' expecting PARI
+Error 16 (6,19): identificador 'c' usado incorrectamente
