@@ -3,7 +3,7 @@ class Coche
      public bool arrancar()
      {
           Coche c;
-          c = new arrancar();
+          Coche = new asdasdasda();
      }
 }
 

@@ -2,8 +2,8 @@ class Coche
 {
      public bool arrancar()
      {
-          Coche c;
-          c = new arrancar();
+          Coche c[];
+          c = new Coche();
      }
 }
 
